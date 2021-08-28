@@ -1,0 +1,31 @@
+<div class="m-4 container">
+    <form [formGroup]="registerForm" (ngSubmit)='submitForm(registerForm)'>
+        <label class="form-label" for="firstName"> First Name</label>
+        <input formControlName="first_name" type="text" class="form-control" id="firstName">
+        <div class="alert-danger p-2" *ngIf="registerForm.get('first_name')?.errors&& registerForm.get('first_name')?.touched">
+            <p>First Name is required </p>
+        </div>
+        <label class="form-label" for="lastName"> Last Name</label>
+        <input formControlName="last_name" type="text" class="form-control" id="lastName">
+        <div class="alert-danger p-2" *ngIf="registerForm.get('last_name')?.errors&& registerForm.get('last_name')?.touched">
+            <p>Last Name is required </p>
+        </div>
+        <label class="form-label" for="email"> E-mail</label>
+        <input formControlName="email" type="email" class="form-control" id="email">
+        <div class="alert-danger p-2" *ngIf="registerForm.get('email')?.errors&& registerForm.get('email')?.touched">
+            <p *ngIf="registerForm.get('email')?.errors?.required">E-mail is required </p>
+            <p *ngIf="registerForm.get('email')?.errors?.email">E-mail is Invalid </p>
+        </div>
+        <label class="form-label" for="password"> Password</label>
+        <input formControlName="password" type="text" class="form-control" id="password">
+        <div class="alert-danger p-2" *ngIf="registerForm.get('password')?.errors&& registerForm.get('password')?.touched">
+            <p *ngIf="registerForm.get('password')?.errors?.required">Password is required </p>
+            <p *ngIf="registerForm.get('password')?.errors?.pattern">Password should be atleast 5 letters and start with a capital letter! </p>
+        </div>
+        <div class="w-100 d-flex justify-content-end">
+            <button [disabled]='registerForm.invalid' type="submit" class="my-3 btn btn-info">Register</button>
+        </div>
+    </form>
+    <div *ngIf="error" class="alert-danger p-2 mt-2">{{error}}</div>
+
+</div>

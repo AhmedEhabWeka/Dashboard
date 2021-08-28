@@ -1,0 +1,23 @@
+.container {
+    height: 80vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 8rem;
+    font-family: 'cursive';
+    color: #0D6EFD
+}
+
+p {
+    font-size: 1.5rem;
+    color: #0D6EFD
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: white!important;
+}

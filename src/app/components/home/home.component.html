@@ -1,0 +1,58 @@
+<div class="wrapper container-fluid">
+
+
+    <div class="row">
+        <div class="col-md-2 offset-md-1">
+            <div class="sideBar d-flex flex-column align-items-center justify-content-around  ">
+                <div class="sideBarHeader d-flex flex-column align-items-center justify-content-around ">
+                    <div class=" m-2 imageContainer  ">
+                        <img src="../../../assets/images/Pp.png" alt="">
+                    </div>
+                    <div class=" greeting m-2 text-white">
+                        <div> Hello,{{user}} </div>
+                        <div>Welcome back to Dashboard</div>
+                    </div>
+                </div>
+
+                <div class=" sideBarContent w-100">
+                    <div class=" nav ">
+                        <p>Lorem.</p>
+                    </div>
+                    <div class=" nav ">
+                        <p>Lorem.</p>
+                    </div>
+                    <div class=" nav ">
+                        <p>Lorem.</p>
+                    </div>
+                    <div class=" nav ">
+                        <p>Lorem.</p>
+                    </div>
+                    <div class=" nav ">
+                        <p>Lorem.</p>
+                    </div>
+                    <div class="nav ">
+                        <p>Lorem.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" m-1 col-md-9">
+            <div class="row  d-flex justify-content-around">
+                <div class="col-md-3 card">
+                    <p>Current Population: <span class="d-block"><b>102.33 Million</b> </span></p>
+                </div>
+                <div class="col-md-3 card">
+                    <p>Current Male Count: <span class="d-block"><b>51.7 Million</b></span></p>
+                </div>
+                <div class="col-md-3 card">
+                    <p>Current Female Count: <span class="d-block"><b>50.63 Million</b></span></p>
+                </div>
+            </div>
+            <div class=" card d-flex justify-content-center">
+                <highcharts-chart [Highcharts]="highcharts" [options]="chartOptions">
+                </highcharts-chart>
+            </div>
+
+        </div>
+    </div>
+</div>

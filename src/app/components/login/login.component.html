@@ -1,0 +1,24 @@
+<div class=" m-5 container">
+    <form [formGroup]="loginForm" (ngSubmit)='submitForm(loginForm)'>
+
+        <label class="form-label" for="email"> E-mail</label>
+        <input formControlName="email" type="email" class="form-control" id="email">
+        <div class="alert-danger p-2" *ngIf="loginForm.get('email')?.errors&& loginForm.get('email')?.touched">
+            <p *ngIf="loginForm.get('email')?.errors?.required">E-mail is required </p>
+            <p *ngIf="loginForm.get('email')?.errors?.email">E-mail is Invalid </p>
+        </div>
+        <label class="form-label" for="password"> Password</label>
+        <input formControlName="password" type="text" class="form-control" id="password">
+        <div class="alert-danger p-2" *ngIf="loginForm.get('password')?.errors&& loginForm.get('password')?.touched">
+            <p *ngIf="loginForm.get('password')?.errors?.required">Password is required </p>
+            <p *ngIf="loginForm.get('password')?.errors?.pattern">Password should be atleast 5 letters and start with a capital letter! </p>
+        </div>
+        <div class="w-100 d-flex justify-content-between">
+            <p class=" my-3">Don't have an account?<a routerLink=" /register ">Register now</a></p>
+            <button [disabled]='loginForm.invalid' type="submit " class=" my-3 btn btn-success ">Log In</button>
+        </div>
+    </form>
+
+    <div *ngIf="error " class="alert-danger p-2 mt-2 ">{{error}}</div>
+
+</div>
